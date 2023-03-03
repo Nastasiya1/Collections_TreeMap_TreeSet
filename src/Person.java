@@ -2,10 +2,13 @@ public class Person {
     private String name;
     private String surname;
     private int age;
-    public Person (String name, String surname, int age){
+    private String surnameParts[];
+
+    public Person(String name, String surname, int age) {
         this.name = name;
         this.surname = surname;
         this.age = age;
+        this.surnameParts = surname.split(" ");
     }
 
     public String getName() {
@@ -19,9 +22,10 @@ public class Person {
     public String getSurname() {
         return surname;
     }
-     public void setSurname(String surname){
+
+    public void setSurname(String surname) {
         this.surname = surname;
-     }
+    }
 
     public int getAge() {
         return age;
@@ -31,8 +35,12 @@ public class Person {
         this.age = age;
     }
 
+    public String[] getSurnameParts() {
+        return surnameParts;
+    }
+
     @Override
     public String toString() {
-        return name + " " + surname + " " + age;
+        return name + " " + surname + " - " + age;
     }
 }
